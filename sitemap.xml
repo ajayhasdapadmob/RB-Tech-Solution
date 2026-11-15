@@ -1,36 +1,27 @@
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/</loc>
-  </url>
-
-  <url>
-    <loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/services.html</loc>
-  </url>
-
-  <url>
-    <loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/contact.html</loc>
-  </url>
-
-  <url>
-    <loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/website-development.html</loc>
-  </url>
-
-  <url>
-    <loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/software-development.html</loc>
-  </url>
-
-  <url>
-    <loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/billing-software.html</loc>
-  </url>
-
-  <url>
-    <loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/mobile-computer-repair.html</loc>
-  </url>
-
-  <url>
-    <loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/cctv-installation.html</loc>
-  </url>
-
+<script src="chrome-extension://eiimnmioipafcokbfikbljfdeojpcgbh/activeContentBlocker.js"/>
+<url>
+<loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/</loc>
+</url>
+<url>
+<loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/services.html</loc>
+</url>
+<url>
+<loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/contact.html</loc>
+</url>
+<url>
+<loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/website-development.html</loc>
+</url>
+<url>
+<loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/software-development.html</loc>
+</url>
+<url>
+<loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/billing-software.html</loc>
+</url>
+<url>
+<loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/mobile-computer-repair.html</loc>
+</url>
+<url>
+<loc>https://ajayhasdapadmob.github.io/RB-Tech-Solution/cctv-installation.html</loc>
+</url>
 </urlset>
