@@ -5,12 +5,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+
   <title>Contact Us - RB Tech Solution</title>
+  <meta name="description" content="Contact RB Tech Solution for website development, software, billing solutions, mobile and computer repair, and CCTV installation.">
+  <meta name="keywords" content="RB Tech Solution, Website Development, Software Development, Billing Software, Mobile Repair, Computer Repair, CCTV Installation">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ajayhasdapadmob.github.io/RB-Tech-Solution/contact.html">
+
+  <meta property="og:title" content="Contact Us - RB Tech Solution">
+  <meta property="og:description" content="Get in touch with RB Tech Solution for technology services and support.">
+  <meta property="og:url" content="https://ajayhasdapadmob.github.io/RB-Tech-Solution/contact.html">
+  <meta property="og:type" content="website">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -31,9 +40,7 @@
       font-size: 30px;
     }
 
-    header p {
-      color: #cbd5e1;
-    }
+    header p { color: #cbd5e1; }
 
     nav {
       background: #1e293b;
@@ -47,9 +54,7 @@
       font-size: 15px;
     }
 
-    nav a:hover {
-      color: #38bdf8;
-    }
+    nav a:hover { color: #38bdf8; }
 
     .contact-section {
       width: 90%;
@@ -62,13 +67,38 @@
       box-shadow: 0 2px 8px #cccccc;
     }
 
-    h2 {
-      color: #2563eb;
-    }
+    h2 { color: #2563eb; }
 
     .info {
       margin: 22px 0;
       line-height: 1.7;
+    }
+
+    .contact-form {
+      text-align: left;
+      margin-top: 25px;
+    }
+
+    .contact-form label {
+      display: block;
+      margin: 14px 0 6px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 7px;
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-form textarea {
+      min-height: 110px;
+      resize: vertical;
     }
 
     .button {
@@ -77,22 +107,25 @@
       margin: 8px;
       color: white;
       text-decoration: none;
+      border: none;
       border-radius: 8px;
       font-weight: bold;
+      cursor: pointer;
       transition: 0.3s ease;
+      font-size: 15px;
     }
 
-    .whatsapp {
-      background: #16a34a;
-    }
-
-    .email {
-      background: #2563eb;
-    }
+    .whatsapp { background: #16a34a; }
+    .email { background: #2563eb; }
 
     .button:hover {
       transform: translateY(-3px);
       opacity: 0.9;
+    }
+
+    .send-button {
+      width: 100%;
+      margin: 20px 0 5px;
     }
 
     .back {
@@ -116,13 +149,9 @@
         margin: 7px;
       }
 
-      header h1 {
-        font-size: 25px;
-      }
+      header h1 { font-size: 25px; }
 
-      .contact-section {
-        padding: 20px 12px;
-      }
+      .contact-section { padding: 20px 12px; }
     }
   </style>
 </head>
@@ -142,8 +171,42 @@
   </nav>
 
   <section class="contact-section">
+
     <h2>Contact Us</h2>
     <p>Need any technical help? Contact us today.</p>
+
+    <form class="contact-form" id="contactForm">
+
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="mobile">Mobile Number *</label>
+      <input type="tel" id="mobile" placeholder="Enter 10 digit mobile number"
+        pattern="[0-9]{10}" maxlength="10" inputmode="numeric" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email">
+
+      <label for="service">Select Service *</label>
+      <select id="service" required>
+        <option value="">-- Select a Service --</option>
+        <option>Website Development</option>
+        <option>Software Development</option>
+        <option>Billing Software</option>
+        <option>Mobile & Computer Repair</option>
+        <option>CCTV Installation</option>
+        <option>Other Technical Support</option>
+      </select>
+
+      <label for="message">Your Message *</label>
+      <textarea id="message" placeholder="Describe your requirement..."
+        required></textarea>
+
+     <button type="submit" class="button whatsapp send-button" id="submitBtn">
+  Submit
+</button>
+
+    </form>
 
     <div class="info">
       <h3>📞 Phone / WhatsApp</h3>
@@ -151,7 +214,7 @@
 
       <a class="button whatsapp"
          href="https://wa.me/919663116089"
-         target="_blank">
+         target="_blank" rel="noopener">
         Chat on WhatsApp
       </a>
     </div>
@@ -165,14 +228,91 @@
         Send Email
       </a>
     </div>
+
   </section>
 
-  <a href="index.html">🏠 Back to Home</a>
-<a href="services.html">Back to Services</a>
+  <a class="back" href="index.html">← Back to Home</a>
+
   <footer>
     <p>© 2026 RB Tech Solution. All Rights Reserved.</p>
     <p>Innovate • Develop • Grow</p>
   </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  emailjs.init({
+    publicKey: "AsUiMVkBY3DFQ-DOJ"
+  });
+  
+  document.getElementById("contactForm")
+    .addEventListener("submit", async function(event) {
+      
+      event.preventDefault();
+      
+      const btn = document.getElementById("submitBtn");
+      
+      const name = document.getElementById("name").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+      
+      if (!/^[0-9]{10}$/.test(mobile)) {
+        alert("Please enter a valid 10 digit mobile number.");
+        return;
+      }
+      
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+      
+      const whatsappMessage =
+        "New Enquiry - RB Tech Solution\n\n" +
+        "Name: " + name + "\n" +
+        "Mobile: " + mobile + "\n" +
+        "Email: " + (email || "Not provided") + "\n" +
+        "Service: " + service + "\n" +
+        "Message: " + message;
+      
+      const whatsappURL =
+        "https://wa.me/919663116089?text=" +
+        encodeURIComponent(whatsappMessage);
+      
+      try {
+        
+        await emailjs.send(
+          "service_ipztz05",
+          "template_c4lyz4p",
+          {
+            name: name,
+            mobile: mobile,
+            email: email || "Not provided",
+            service: service,
+            message: message
+          }
+        );
+        
+        alert("Email sent successfully!");
+        
+        window.open(whatsappURL, "_blank");
+        
+        document.getElementById("contactForm").reset();
+        
+      } catch (error) {
+        
+        console.error("EmailJS Error:", error);
+        
+        alert("Email could not be sent. Please try again. WhatsApp enquiry will still open.");
+        
+        window.open(whatsappURL, "_blank");
+      }
+      
+      btn.disabled = false;
+      btn.textContent = "Submit";
+      
+    });
+</script>
+
 
 </body>
 </html>
