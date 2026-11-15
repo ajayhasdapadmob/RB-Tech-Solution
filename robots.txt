@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://ajayhasdapadmob.github.io/RB-Tech-Solution/sitemap.xml
