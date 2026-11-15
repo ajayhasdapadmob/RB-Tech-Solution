@@ -5,14 +5,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
 
     <title>RB Tech Solution | Your Technology Partner</title>
 
-    <meta name="description" content="RB Tech Solution provides website development, software development, billing software, mobile and computer repair, and CCTV installation services.">
+    <meta name="description" content="RB Tech Solution provides professional website development, software development, billing software, mobile and computer repair, and CCTV installation services.">
+
+    <meta name="keywords" content="RB Tech Solution, Website Development, Software Development, Billing Software, Mobile Repair, Computer Repair, CCTV Installation">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://ajayhasdapadmob.github.io/RB-Tech-Solution/">
+
+    <meta property="og:title" content="RB Tech Solution | Your Technology Partner">
+    <meta property="og:description" content="Professional website, software, billing and IT services.">
+    <meta property="og:url" content="https://ajayhasdapadmob.github.io/RB-Tech-Solution/">
+    <meta property="og:type" content="website">
 
     <style>
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -135,35 +151,38 @@
             padding: 10px;
         }
 
-        .card {
+        .service-card-link {
+            display: block;
             background: white;
             margin: 0;
             padding: 25px;
             border-radius: 15px;
             border: 1px solid #cbd5e1;
-            box-shadow: 0 2px 8px #cccccc;
+            box-shadow: 0 2px 8px #ccc;
             transition: 0.3s ease;
+            text-decoration: none;
+            color: inherit;
         }
 
-        .card h3 {
+        .service-card-link h3 {
             color: #2563eb;
             font-size: 20px;
             margin-bottom: 12px;
         }
 
-        .card p {
+        .service-card-link p {
             color: #64748b;
             font-size: 16px;
             line-height: 1.6;
             margin-top: 8px;
         }
 
-        .card .icon {
+        .service-card-link .icon {
             font-size: 40px;
             margin-bottom: 10px;
         }
 
-        .card:hover {
+        .service-card-link:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px #94a3b8;
         }
@@ -177,14 +196,11 @@
             font-size: 16px;
             text-decoration: none;
             font-weight: bold;
-            box-shadow: 0 3px 8px #cccccc;
-            transition: 0.3s ease;
             margin-top: 20px;
         }
 
         .contact:hover {
             background: #15803d;
-            transform: translateY(-3px);
         }
 
         #about {
@@ -192,6 +208,9 @@
             margin: 30px auto;
             padding: 30px 20px;
             width: 90%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px #ccc;
         }
 
         #about h2 {
@@ -203,6 +222,72 @@
             color: #64748b;
         }
 
+        /* CONTACT FORM */
+
+        .contact-section {
+            width: 90%;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        .contact-section h2 {
+            color: #2563eb;
+        }
+
+        .contact-section p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .contact-section label {
+            display: block;
+            text-align: left;
+            margin: 14px 0 6px;
+            font-weight: bold;
+        }
+
+        .contact-section input,
+        .contact-section select,
+        .contact-section textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .contact-section textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .contact-section button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #16a34a;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact-section button:hover {
+            background: #15803d;
+        }
+
+        .contact-section button:disabled {
+            background: #64748b;
+            cursor: not-allowed;
+        }
+
         footer {
             background: #0f172a;
             color: white;
@@ -212,6 +297,11 @@
 
         footer p {
             margin: 8px;
+        }
+
+        footer a {
+            color: #93c5fd;
+            text-decoration: none;
         }
 
         @media (max-width: 600px) {
@@ -239,18 +329,17 @@
             .services > h2 {
                 font-size: 24px;
             }
+
+            .contact-section {
+                padding: 20px;
+            }
         }
-         .service-list {
-     display: grid;
-     grid-template-columns: repeat(2, minmax(0, 1fr));
-     gap: 15px;
-     padding: 10px;
-     background: whitesmoke;
- }
     </style>
 </head>
 
 <body id="home">
+
+    <!-- HEADER -->
 
     <header>
 
@@ -267,10 +356,12 @@
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="#about">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="#contact">Contact</a>
         </nav>
 
     </header>
+
+    <!-- HERO SECTION -->
 
     <section class="hero">
 
@@ -288,7 +379,7 @@
                 Our Services
             </a>
 
-            <a href="contact.html" class="contact-btn">
+            <a href="#contact" class="contact-btn">
                 Contact Us
             </a>
 
@@ -296,55 +387,58 @@
 
     </section>
 
+    <!-- OUR SERVICES -->
+
     <section class="services" id="services">
 
         <h2>Our Services</h2>
 
         <div class="service-list">
-    
-    <a href="website-development.html" class="card service-card-link">
-        <div class="icon">🌐</div>
-        <h3>Website Development</h3>
-        <p>Professional Website Design</p>
-    </a>
-    
-    <a href="software-development.html" class="card service-card-link">
-        <div class="icon">💻</div>
-        <h3>Software Development</h3>
-        <p>Custom Software Solutions</p>
-    </a>
-    
-    <a href="billing-software.html" class="card service-card-link">
-        <div class="icon">🧾</div>
-        <h3>Billing Software</h3>
-        <p>Smart Billing and POS System</p>
-    </a>
-    
-    <a href="mobile-computer-repair.html" class="card service-card-link">
-        <div class="icon">🔧</div>
-        <h3>Mobile & Computer Repair</h3>
-        <p>Technical Support and Repair</p>
-    </a>
-    
-    <a href="cctv-installation.html" class="card service-card-link">
-        <div class="icon">📹</div>
-        <h3>CCTV Installation</h3>
-        <p>Security Camera Solutions</p>
-    </a>
-    
-</div>
+
+            <a href="website-development.html" class="service-card-link">
+                <div class="icon">🌐</div>
+                <h3>Website Development</h3>
+                <p>Professional Website Design</p>
+            </a>
+
+            <a href="software-development.html" class="service-card-link">
+                <div class="icon">💻</div>
+                <h3>Software Development</h3>
+                <p>Custom Software Solutions</p>
+            </a>
+
+            <a href="billing-software.html" class="service-card-link">
+                <div class="icon">🧾</div>
+                <h3>Billing Software</h3>
+                <p>Smart Billing and POS System</p>
+            </a>
+
+            <a href="mobile-computer-repair.html" class="service-card-link">
+                <div class="icon">🔧</div>
+                <h3>Mobile & Computer Repair</h3>
+                <p>Technical Support and Repair</p>
+            </a>
+
+            <a href="cctv-installation.html" class="service-card-link">
+                <div class="icon">📹</div>
+                <h3>CCTV Installation</h3>
+                <p>Security Camera Solutions</p>
+            </a>
 
         </div>
 
         <a href="https://wa.me/919663116089"
            class="contact"
-           target="_blank">
+           target="_blank"
+           rel="noopener">
             Contact on WhatsApp
         </a>
 
     </section>
 
-    <section class="card" id="about">
+    <!-- ABOUT US -->
+
+    <section id="about">
 
         <h2>About Us</h2>
 
@@ -357,13 +451,174 @@
 
     </section>
 
+    <!-- HOME PAGE CONTACT FORM -->
+
+    <section class="contact-section" id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>
+            Need any technical help?
+            Send us your enquiry.
+        </p>
+
+        <form id="homeContactForm">
+
+            <label for="homeName">Full Name *</label>
+            <input type="text"
+                   id="homeName"
+                   placeholder="Enter your name"
+                   required>
+
+            <label for="homeMobile">Mobile Number *</label>
+            <input type="tel"
+                   id="homeMobile"
+                   placeholder="Enter 10 digit mobile number"
+                   pattern="[0-9]{10}"
+                   maxlength="10"
+                   inputmode="numeric"
+                   required>
+
+            <label for="homeEmail">Email Address</label>
+            <input type="email"
+                   id="homeEmail"
+                   placeholder="Enter your email">
+
+            <label for="homeService">Select Service *</label>
+
+            <select id="homeService" required>
+                <option value="">-- Select a Service --</option>
+                <option>Website Development</option>
+                <option>Software Development</option>
+                <option>Billing Software</option>
+                <option>Mobile & Computer Repair</option>
+                <option>CCTV Installation</option>
+                <option>Other Technical Support</option>
+            </select>
+
+            <label for="homeMessage">Your Message *</label>
+
+            <textarea id="homeMessage"
+                      placeholder="Describe your requirement..."
+                      required></textarea>
+
+            <button type="submit" id="submitBtn">
+                Submit
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- FOOTER -->
+
     <footer>
 
         <p>© 2026 RB Tech Solution</p>
         <p>Your Technology Partner</p>
         <p>Innovate • Develop • Grow</p>
 
+        <p>
+            Phone:
+            <a href="tel:+919663116089">+91 9663116089</a>
+        </p>
+
+        <p>
+            Email:
+            <a href="mailto:ajayhasda623@gmail.com">
+                ajayhasda623@gmail.com
+            </a>
+        </p>
+
     </footer>
+
+    <!-- EMAILJS AND WHATSAPP -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+
+        emailjs.init({
+            publicKey: "AsUiMVkBY3DFQ-DOJ"
+        });
+
+        document.getElementById("homeContactForm")
+        .addEventListener("submit", async function(event) {
+
+            event.preventDefault();
+
+            const btn = document.getElementById("submitBtn");
+
+            const name = document.getElementById("homeName").value.trim();
+            const mobile = document.getElementById("homeMobile").value.trim();
+            const email = document.getElementById("homeEmail").value.trim();
+            const service = document.getElementById("homeService").value;
+            const message = document.getElementById("homeMessage").value.trim();
+
+            if (!/^[0-9]{10}$/.test(mobile)) {
+                alert("Please enter a valid 10 digit mobile number.");
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = "Sending...";
+
+            const whatsappMessage =
+                "New Enquiry - RB Tech Solution\n\n" +
+                "Name: " + name + "\n" +
+                "Mobile: " + mobile + "\n" +
+                "Email: " + (email || "Not provided") + "\n" +
+                "Service: " + service + "\n" +
+                "Message: " + message;
+
+            const whatsappURL =
+                "https://wa.me/919663116089?text=" +
+                encodeURIComponent(whatsappMessage);
+
+            const waWindow = window.open("about:blank", "_blank");
+
+            try {
+
+                await emailjs.send(
+                    "service_ipztz05",
+                    "template_c4lyz4p",
+                    {
+                        name: name,
+                        mobile: mobile,
+                        email: email || "Not provided",
+                        service: service,
+                        message: message
+                    }
+                );
+
+                alert("Email sent successfully!");
+
+                if (waWindow) {
+                    waWindow.location.href = whatsappURL;
+                } else {
+                    alert("Please allow pop-ups to open WhatsApp.");
+                }
+
+                document.getElementById("homeContactForm").reset();
+
+            } catch (error) {
+
+                console.error("EmailJS Error:", error);
+
+                alert("Email could not be sent. Please check your internet connection.");
+
+                if (waWindow) {
+                    waWindow.location.href = whatsappURL;
+                }
+
+            }
+
+            btn.disabled = false;
+            btn.textContent = "Submit";
+
+        });
+
+    </script>
 
 </body>
 </html>
