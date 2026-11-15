@@ -7,14 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0f172a">
 
-  <title>Contact Us - RB Tech Solution</title>
-  <meta name="description" content="Contact RB Tech Solution for website development, software, billing solutions, mobile and computer repair, and CCTV installation.">
-  <meta name="keywords" content="RB Tech Solution, Website Development, Software Development, Billing Software, Mobile Repair, Computer Repair, CCTV Installation">
+  <title>Contact Us - RB Tech Solution (RBH)</title>
+
+  <meta name="description" content="Contact RB Tech Solution (RBH) for website development, software, billing solutions, mobile and computer repair, and CCTV installation.">
+
+  <meta name="keywords" content="RB Tech Solution RBH, Website Development, Software Development, Billing Software, Mobile Repair, Computer Repair, CCTV Installation">
+
   <meta name="robots" content="index, follow">
+
   <link rel="canonical" href="https://ajayhasdapadmob.github.io/RB-Tech-Solution/contact.html">
 
-  <meta property="og:title" content="Contact Us - RB Tech Solution">
-  <meta property="og:description" content="Get in touch with RB Tech Solution for technology services and support.">
+  <meta property="og:title" content="Contact Us - RB Tech Solution (RBH)">
+  <meta property="og:description" content="Get in touch with RB Tech Solution (RBH) for technology services and support.">
   <meta property="og:url" content="https://ajayhasdapadmob.github.io/RB-Tech-Solution/contact.html">
   <meta property="og:type" content="website">
 
@@ -159,7 +163,7 @@
 <body>
 
   <header>
-    <h1>RB Tech Solution</h1>
+    <h1>RB Tech Solution (RBH)</h1>
     <p>Your Technology Partner</p>
   </header>
 
@@ -202,9 +206,9 @@
       <textarea id="message" placeholder="Describe your requirement..."
         required></textarea>
 
-     <button type="submit" class="button whatsapp send-button" id="submitBtn">
-  Submit
-</button>
+      <button type="submit" class="button whatsapp send-button" id="submitBtn">
+        Submit
+      </button>
 
     </form>
 
@@ -234,85 +238,84 @@
   <a class="back" href="index.html">← Back to Home</a>
 
   <footer>
-    <p>© 2026 RB Tech Solution. All Rights Reserved.</p>
+    <p>© 2026 RB Tech Solution (RBH). All Rights Reserved.</p>
     <p>Innovate • Develop • Grow</p>
   </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<script>
-  emailjs.init({
-    publicKey: "AsUiMVkBY3DFQ-DOJ"
-  });
-  
-  document.getElementById("contactForm")
-    .addEventListener("submit", async function(event) {
-      
-      event.preventDefault();
-      
-      const btn = document.getElementById("submitBtn");
-      
-      const name = document.getElementById("name").value.trim();
-      const mobile = document.getElementById("mobile").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const service = document.getElementById("service").value;
-      const message = document.getElementById("message").value.trim();
-      
-      if (!/^[0-9]{10}$/.test(mobile)) {
-        alert("Please enter a valid 10 digit mobile number.");
-        return;
-      }
-      
-      btn.disabled = true;
-      btn.textContent = "Sending...";
-      
-      const whatsappMessage =
-        "New Enquiry - RB Tech Solution\n\n" +
-        "Name: " + name + "\n" +
-        "Mobile: " + mobile + "\n" +
-        "Email: " + (email || "Not provided") + "\n" +
-        "Service: " + service + "\n" +
-        "Message: " + message;
-      
-      const whatsappURL =
-        "https://wa.me/919663116089?text=" +
-        encodeURIComponent(whatsappMessage);
-      
-      try {
-        
-        await emailjs.send(
-          "service_ipztz05",
-          "template_c4lyz4p",
-          {
-            name: name,
-            mobile: mobile,
-            email: email || "Not provided",
-            service: service,
-            message: message
-          }
-        );
-        
-        alert("Email sent successfully!");
-        
-        window.open(whatsappURL, "_blank");
-        
-        document.getElementById("contactForm").reset();
-        
-      } catch (error) {
-        
-        console.error("EmailJS Error:", error);
-        
-        alert("Email could not be sent. Please try again. WhatsApp enquiry will still open.");
-        
-        window.open(whatsappURL, "_blank");
-      }
-      
-      btn.disabled = false;
-      btn.textContent = "Submit";
-      
+  <script>
+    emailjs.init({
+      publicKey: "AsUiMVkBY3DFQ-DOJ"
     });
-</script>
 
+    document.getElementById("contactForm")
+      .addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const btn = document.getElementById("submitBtn");
+
+        const name = document.getElementById("name").value.trim();
+        const mobile = document.getElementById("mobile").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const service = document.getElementById("service").value;
+        const message = document.getElementById("message").value.trim();
+
+        if (!/^[0-9]{10}$/.test(mobile)) {
+          alert("Please enter a valid 10 digit mobile number.");
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = "Sending...";
+
+        const whatsappMessage =
+          "New Enquiry - RB Tech Solution (RBH)\n\n" +
+          "Name: " + name + "\n" +
+          "Mobile: " + mobile + "\n" +
+          "Email: " + (email || "Not provided") + "\n" +
+          "Service: " + service + "\n" +
+          "Message: " + message;
+
+        const whatsappURL =
+          "https://wa.me/919663116089?text=" +
+          encodeURIComponent(whatsappMessage);
+
+        try {
+
+          await emailjs.send(
+            "service_ipztz05",
+            "template_c4lyz4p",
+            {
+              name: name,
+              mobile: mobile,
+              email: email || "Not provided",
+              service: service,
+              message: message
+            }
+          );
+
+          alert("Email sent successfully!");
+
+          window.open(whatsappURL, "_blank");
+
+          document.getElementById("contactForm").reset();
+
+        } catch (error) {
+
+          console.error("EmailJS Error:", error);
+
+          alert("Email could not be sent. Please try again. WhatsApp enquiry will still open.");
+
+          window.open(whatsappURL, "_blank");
+        }
+
+        btn.disabled = false;
+        btn.textContent = "Submit";
+
+      });
+  </script>
 
 </body>
 </html>
