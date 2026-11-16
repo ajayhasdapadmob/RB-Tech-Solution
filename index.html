@@ -1,1343 +1,625 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>RB Tech Solution (RBH) | CCTV Cameras & Security Systems</title>
-
-<meta name="description" content="RB Tech Solution (RBH) provides CCTV cameras, IP cameras, DVR, NVR, video door phones, biometric systems and complete security solutions.">
-
-<meta name="keywords" content="RB Tech Solution, RB Tech Solution RBH, CCTV Camera, Security Camera, IP Camera, DVR, NVR, Video Door Phone, Biometric Systems">
-
-<meta name="author" content="RB Tech Solution (RBH)">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#087f3c">
-
-<link rel="canonical" href="https://ajayhasdapadmob.github.io/RB-Tech-solution-camera-pluse/">
-
-<meta property="og:title" content="RB Tech Solution (RBH) | CCTV & Security Systems">
-<meta property="og:description" content="Explore CCTV cameras, IP cameras, DVR, NVR and complete security solutions from RB Tech Solution (RBH).">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ajayhasdapadmob.github.io/RB-Tech-solution-camera-pluse/">
-  <style>
-    /* =====================================
-       CONTACT POPUP
-    ===================================== */
-
-    .contact-popup {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      background: rgba(0, 0, 0, .78);
-      padding: 20px;
-      overflow-y: auto;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .contact-popup.active {
-      display: flex;
-    }
-
-    .contact-popup-box {
-      position: relative;
-      background: #fff;
-      color: #26352b;
-      width: 100%;
-      max-width: 750px;
-      max-height: 92vh;
-      overflow-y: auto;
-      padding: 35px;
-      border-radius: 12px;
-      box-shadow: 0 15px 55px rgba(0,0,0,.3);
-    }
-
-    .contact-popup-header {
-      text-align: center;
-      margin-bottom: 25px;
-      padding: 0 35px;
-    }
-
-    .contact-popup-header h2 {
-      color: #075b30;
-      font-size: 30px;
-      margin: 5px 0 10px;
-    }
-
-    .contact-popup-header p {
-      color: #555;
-      margin: 0;
-    }
-
-    .contact-close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      border: 0;
-      background: #075b30;
-      color: white;
-      font-size: 27px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .contact-close:hover {
-      background: #dc2626;
-    }
-
-    .contact-popup-layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      width: 100%;
-      gap: 0;
-    }
-
-    .contact-details-box {
-      background: #f8faf8;
-      padding: 25px;
-      border-radius: 8px;
-      border: 1px solid #e1e9e2;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .contact-details-box h3 {
-      color: #075b30;
-      margin: 0 0 20px;
-    }
-
-    .contact-detail-item {
-      margin-bottom: 18px;
-      line-height: 1.6;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-detail-item strong {
-      display: block;
-      color: #075b30;
-      margin-bottom: 3px;
-    }
-
-    .contact-detail-item a {
-      color: #087f3c;
-      text-decoration: none;
-    }
-
-    .contact-detail-item a:hover {
-      text-decoration: underline;
-    }
-
-    @media(max-width: 768px) {
-      .contact-popup {
-        padding: 10px;
-        align-items: flex-start;
-      }
-
-      .contact-popup-box {
-        padding: 55px 16px 20px;
-        max-height: 96vh;
-      }
-
-      .contact-popup-header h2 {
-        font-size: 23px;
-      }
-
-      .contact-details-box {
-        padding: 17px;
-      }
-    }
-
-    /* =====================================
-       MARKETING CONTENT
-    ===================================== */
-
-    .marketing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
-      margin-top: 25px;
-    }
-
-    .marketing-item {
-      background: #fff;
-      border: 1px solid #e2e8e3;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, .06);
-      color: #26352b;
-    }
-
-    .marketing-item img,
-    .marketing-item video {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      display: block;
-      background: #eef2ef;
-    }
-
-    .marketing-item-body {
-      padding: 17px;
-    }
-
-    .marketing-item-body h3 {
-      color: #075b30;
-      margin: 0 0 10px;
-    }
-
-    .marketing-item-body p {
-      color: #555;
-      line-height: 1.6;
-      white-space: pre-line;
-    }
-
-    .marketing-item button,
-    .marketing-item a {
-      display: inline-block;
-      margin: 5px 6px 0 0;
-      padding: 9px 15px;
-      border: 0;
-      border-radius: 5px;
-      background: #087f3c;
-      color: white;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .marketing-viewer {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 100001;
-      background: rgba(0, 0, 0, .88);
-      padding: 20px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .marketing-viewer.active {
-      display: flex;
-    }
-
-    .marketing-viewer-box {
-      position: relative;
-      background: white;
-      width: 100%;
-      max-width: 950px;
-      max-height: 92vh;
-      overflow: auto;
-      padding: 45px 18px 18px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    #closeMarketingViewer {
-      position: absolute;
-      top: 8px;
-      right: 12px;
-      border: 0;
-      background: #075b30;
-      color: white;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    #marketingViewerContent img,
-    #marketingViewerContent video,
-    #marketingViewerContent iframe {
-      max-width: 100%;
-      width: 100%;
-      max-height: 75vh;
-      object-fit: cover;
-      border: 0;
-    }
-
-    #marketingViewerContent h2 {
-      color: #075b30;
-    }
-
-    @media(max-width: 600px) {
-      .marketing-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* =====================================
-       CONTINUOUS MARKETING SLIDER
-    ===================================== */
-
-    .marketing-grid,
-    .news-grid {
-      display: block !important;
-      width: 100%;
-    }
-
-    .marketing-slider {
-      position: relative;
-      width: 100%;
-      box-sizing: border-box;
-      padding: 10px 48px;
-    }
-
-    .marketing-slider-viewport {
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .marketing-slider-track {
-      display: flex;
-      width: max-content;
-      align-items: stretch;
-      will-change: transform;
-    }
-
-    .marketing-slider-group {
-      display: flex;
-      flex: 0 0 auto;
-      width: max-content;
-      gap: 20px;
-      padding-right: 20px;
-      align-items: stretch;
-    }
-
-    .marketing-slider-group .marketing-item {
-      flex: 0 0 280px;
-      width: 280px;
-      min-width: 280px;
-      max-width: 280px;
-      box-sizing: border-box;
-    }
-
-    .marketing-arrow {
-      position: absolute;
-      top: 50%;
-      z-index: 10;
-      transform: translateY(-50%);
-      width: 42px;
-      height: 42px;
-      border: none;
-      border-radius: 50%;
-      background: #08a045;
-      color: white;
-      font-size: 19px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .marketing-left {
-      left: 3px;
-    }
-
-    .marketing-right {
-      right: 3px;
-    }
-
-    .marketing-arrow:hover {
-      background: #075b30;
-    }
-
-    .marketing-slider-group video {
-      display: block;
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      background: #000;
-    }
-
-    @media(max-width: 600px) {
-      .marketing-slider {
-        padding: 10px 38px;
-      }
-
-      .marketing-slider-group .marketing-item {
-        flex: 0 0 245px;
-        width: 245px;
-        min-width: 245px;
-        max-width: 245px;
-      }
-
-      .marketing-arrow {
-        width: 34px;
-        height: 34px;
-        font-size: 15px;
-      }
-    }
-
-    /* =====================================
-       FULL SCREEN HERO IMAGE / VIDEO SLIDER
-    ===================================== */
-
-    .hero-section {
-      position: relative !important;
-      display: block !important;
-      width: 100% !important;
-
-      /* Header ke neeche bachi hui poori screen */
-      height: calc(100vh - var(--site-header-height, 0px)) !important;
-      height: calc(100svh - var(--site-header-height, 0px)) !important;
-
-      min-height: 300px;
-      margin: 0 !important;
-      padding: 0 !important;
-      overflow: hidden !important;
-      background: #071b2b;
-      box-sizing: border-box;
-    }
-
-    .hero-marketing-slider {
-      position: absolute !important;
-      inset: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      min-height: 0 !important;
-      max-width: none !important;
-      overflow: hidden !important;
-      padding: 0 !important;
-      margin: 0 !important;
-      border: 0 !important;
-      box-shadow: none !important;
-      background: #071b2b;
-    }
-
-    .hero-marketing-slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity .7s ease;
-    }
-
-    .hero-marketing-slide.active {
-      opacity: 1;
-      visibility: visible;
-      z-index: 1;
-    }
-
-    
-/* HERO IMAGE AND VIDEO SIZE */
-
-.hero-marketing-slider > .hero-static-image,
-.hero-marketing-slide img,
-.hero-marketing-slide video {
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
-  max-height: none !important;
-  object-fit: cover !important;
-  object-position: center center;
-  background: #071b2b;
-  border: 0 !important;
-}
-
-/* HERO SLIDE */
-
-.hero-marketing-slide {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .7s ease;
-  overflow: hidden;
-}
-
-.hero-marketing-slide.active {
-  opacity: 1;
-  visibility: visible;
-  z-index: 1;
-}
-
-/* HERO ARROWS */
-
-.hero-marketing-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-  width: 42px;
-  height: 42px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, .65);
-  color: #fff;
-  font-size: 23px;
-  cursor: pointer;
-}
-
-.hero-marketing-prev {
-  left: 15px;
-}
-
-.hero-marketing-next {
-  right: 15px;
-}
-
-/* HERO DOTS */
-
-.hero-marketing-dots {
-  position: absolute;
-  bottom: 18px;
-  left: 0;
-  right: 0;
-  z-index: 6;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-}
-
-.hero-marketing-dot {
-  width: 10px;
-  height: 10px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, .6);
-  cursor: pointer;
-}
-
-.hero-marketing-dot.active {
-  background: #08a045;
-  transform: scale(1.3);
-}
-
-
-    .hero-marketing-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 5;
-      width: 42px;
-      height: 42px;
-      border: 0;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, .65);
-      color: #fff;
-      font-size: 23px;
-      cursor: pointer;
-    }
-
-    .hero-marketing-arrow:hover {
-      background: #087f3c;
-    }
-
-    .hero-marketing-prev {
-      left: 15px;
-    }
-
-    .hero-marketing-next {
-      right: 15px;
-    }
-
-    .hero-marketing-dots {
-      position: absolute;
-      bottom: 18px;
-      left: 0;
-      right: 0;
-      z-index: 6;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .hero-marketing-dot {
-      width: 10px;
-      height: 10px;
-      padding: 0;
-      border: 0;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, .6);
-      cursor: pointer;
-    }
-
-    .hero-marketing-dot.active {
-      background: #08a045;
-      transform: scale(1.3);
-    }
-
-    .hero-image-label {
-      display: none !important;
-    }
-
-    @media(max-width: 768px) {
-      .hero-section {
-        height: calc(100vh - var(--site-header-height, 0px)) !important;
-        height: calc(100svh - var(--site-header-height, 0px)) !important;
-        min-height: 300px;
-      }
-
-      .hero-marketing-arrow {
-        width: 34px;
-        height: 34px;
-        font-size: 19px;
-      }
-
-      .hero-marketing-prev {
-        left: 8px;
-      }
-
-      .hero-marketing-next {
-        right: 8px;
-      }
-    }
-    
-/* =========================================
-   HERO MEDIA BEHIND TOP STRIP AND HEADER
-========================================= */
-
-body {
-  position: relative;
-  padding-top: 0 !important;
-}
-
-/* Top strip and header stay visible */
-.top-strip,
-.site-header {
-  position: relative !important;
-  z-index: 1000 !important;
-}
-
-/* Hero starts from the very top */
-.hero-section {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100vh !important;
-  height: 100svh !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  z-index: 0 !important;
-}
-
-/* Keep the photo/video full screen */
-.hero-marketing-slider {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-/* Other sections remain below the hero */
-.trust-strip {
-  position: relative;
-  z-index: 1;
-  margin-top: 00vh;
-  margin-top: 00svh;
-}
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="KeS459u0rCFHhhnT3uAAjKgxG90F8PF_evd6bUUSc9Y" />
+    <meta name="theme-color" content="#0f172a">
+
+   <title>RB Tech Solution (RBH) – Your Technology Partner</title>
+
+    <meta name="description" content="RB Tech Solution provides professional website development, software development, billing software, mobile and computer repair, and CCTV installation services.">
+
+    <meta name="keywords" content="RB Tech Solution, Website Development, Software Development, Billing Software, Mobile Repair, Computer Repair, CCTV Installation">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://ajayhasdapadmob.github.io/RB-Tech-Solution/">
+
+   <meta property="og:title" content="RB Tech Solution (RBH) – Your Technology Partner">
+    <meta property="og:description" content="Professional website, software, billing and IT services.">
+    <meta property="og:url" content="https://ajayhasdapadmob.github.io/RB-Tech-Solution/">
+    <meta property="og:type" content="website">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            text-align: center;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 25px 15px;
+        }
+
+        .main-logo {
+            width: 160px;
+            height: auto;
+            display: block;
+            margin: 0 auto 15px;
+        }
+
+        header h1 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #cbd5e1;
+            margin: 8px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px 0 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: #2563eb;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #16a34a;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 15px;
+            margin: 20px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .hero-buttons {
+            margin-top: 25px;
+        }
+
+        .hero-buttons a {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 6px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .service-btn {
+            background: white;
+            color: #2563eb;
+        }
+
+        .contact-btn {
+            background: #16a34a;
+            color: white;
+        }
+
+        .hero-buttons a:hover {
+            transform: translateY(-3px);
+        }
+
+        .services {
+            padding: 25px 15px;
+            width: 100%;
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .services > h2 {
+            color: #0f172a;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            padding: 10px;
+        }
+
+        .service-card-link {
+            display: block;
+            background: white;
+            margin: 0;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 2px 8px #ccc;
+            transition: 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card-link h3 {
+            color: #2563eb;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .service-card-link p {
+            color: #64748b;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+
+        .service-card-link .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .service-card-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px #94a3b8;
+        }
+
+        .contact {
+            display: inline-block;
+            background: #16a34a;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .contact:hover {
+            background: #15803d;
+        }
+
+        #about {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px 20px;
+            width: 90%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        #about h2 {
+            color: #2563eb;
+        }
+
+        #about p {
+            line-height: 1.8;
+            color: #64748b;
+        }
+
+        /* CONTACT FORM */
+
+        .contact-section {
+            width: 90%;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        .contact-section h2 {
+            color: #2563eb;
+        }
+
+        .contact-section p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .contact-section label {
+            display: block;
+            text-align: left;
+            margin: 14px 0 6px;
+            font-weight: bold;
+        }
+
+        .contact-section input,
+        .contact-section select,
+        .contact-section textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .contact-section textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .contact-section button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #16a34a;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact-section button:hover {
+            background: #15803d;
+        }
+
+        .contact-section button:disabled {
+            background: #64748b;
+            cursor: not-allowed;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 8px;
+        }
+
+        footer a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .service-list {
+                grid-template-columns: 1fr;
+            }
+
+            .main-logo {
+                width: 130px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .hero {
+                padding: 35px 15px;
+                margin: 10px;
+            }
+
+            .hero h2 {
+                font-size: 25px;
+            }
+
+            .services > h2 {
+                font-size: 24px;
+            }
+
+            .contact-section {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body id="home">
 
-  
-<!-- TOP STRIP -->
-<div class="top-strip">
-  <a href="tel:+919663116089">+91 96631 16089</a>
-</div>
+    <!-- HEADER -->
 
+    <header>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
+        <img src="images/logo.png"
+             alt="RB Tech Solution Logo"
+             class="main-logo">
 
-      <a href="#home" class="brand">
-        <img src="images/logo.png" alt="RB Tech Solution Logo"
-          onerror="this.style.display='none'">
-        <div>
-          <h1>RB TECH SOLUTION</h1>
-          <span>CCTV & SECURITY SYSTEMS</span>
-        </div>
-      </a>
+       <h1>RB Tech Solution (RBH)</h1>
 
-      <button id="menuToggle" type="button"
-        aria-label="Open navigation menu" aria-expanded="false">☰</button>
+        <p>Your Technology Partner</p>
+        <p>Innovate • Develop • Grow</p>
 
-      <nav id="mainNav">
-        <a href="#home">Home</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-        <div class="nav-dropdown">
-          <a href="#products" class="dropdown-toggle">Products</a>
-          <div class="mega-menu">
-            <div>
-              <h3>Camera Solutions</h3>
-              <a href="#products" data-category="IP Cameras">Network Camera / IP Camera</a>
-              <a href="#products" data-category="CCTV Cameras">Analog HD Camera</a>
-              <a href="#products" data-category="Wireless Cameras">Wireless Cameras</a>
-              <a href="#products" data-category="PTZ Cameras">Speed Dome / PTZ</a>
-            </div>
+    </header>
 
-            <div>
-              <h3>Recording & Access</h3>
-              <a href="#products" data-category="DVR & NVR">DVR & NVR</a>
-              <a href="#products" data-category="Video Door Phone">Video Door Phones</a>
-              <a href="#products" data-category="Biometric Systems">Time & Attendance</a>
-              <a href="#products" data-category="Accessories">Accessories</a>
-            </div>
+    <!-- HERO SECTION -->
 
-            <div>
-              <h3>Other Products</h3>
-              <a href="#products" data-category="Networking">Networking & Switches</a>
-              <a href="#products" data-category="Storage">Storage & Memory</a>
-              <a href="#products">View All Products →</a>
-            </div>
-          </div>
-        </div>
+    <section class="hero">
 
-        <div class="nav-dropdown">
-        <a href="#marketing" class="dropdown-toggle">Marketing</a>
-          <div class="dropdown-menu">
-            <a href="#companyNews">Company News</a>
-            <a href="#brochures">Product Brochures</a>
-            <a href="#videos">Videos</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#printPress">Print & Press</a>
-          </div>
-        </div>
+        <h2>Build Your Digital Future</h2>
 
-        <div class="nav-dropdown">
-          <a href="#solutions" class="dropdown-toggle">Solutions</a>
-          <div class="dropdown-menu">
-            <a href="#solutions">Banking</a>
-            <a href="#solutions">Campus</a>
-            <a href="#solutions">Hospitality & Healthcare</a>
-            <a href="#solutions">Industrial</a>
-            <a href="#solutions">Retail</a>
-            <a href="#solutions">Safe City</a>
-            <a href="#solutions">Smart Traffic</a>
-            <a href="#solutions">Transport</a>
-          </div>
-        </div>
-
-        <div class="nav-dropdown">
-          <a href="#support" class="dropdown-toggle">Support</a>
-          <div class="dropdown-menu">
-            <a href="#support">Technical Support</a>
-            <a href="#support">Warranty Support</a>
-            <a href="#support">Downloads</a>
-            <a href="#" class="open-contact">Contact Support</a>
-          </div>
-        </div>
-
-        <a href="inquiry.html">Inquiry</a>
-        <a href="#partner">Partner Connect</a>
-        <a href="#" class="open-contact">Contact Us</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- FULL SCREEN HERO MEDIA SLIDER -->
-  <section class="hero-section" id="home">
-
-    <div id="heroMarketingSlider" class="hero-marketing-slider">
-      <img
-        src="images/products/jaise%20camera-01.jpg.png"
-        alt="RB Tech Solution"
-        class="hero-static-image">
-    </div>
-
-  </section>
-
-  
-
-  <!-- TRENDING PRODUCTS -->
-  <section id="trending">
-    <div class="section-heading">
-      <h2>Trending Products</h2>
-      <p>Discover featured and popular security products.</p>
-    </div>
-
-    <div id="trendingGrid">
-      <p>Loading trending products...</p>
-    </div>
-
-    <div style="text-align:center;margin-top:25px;">
-      <a href="#products"
-        style="display:inline-block;padding:12px 25px;background:#08a045;color:white;border-radius:6px;font-weight:bold;">
-        SHOW ALL PRODUCTS
-      </a>
-    </div>
-  </section>
-
-  <!-- PRODUCT CATEGORIES -->
-  <section id="productCategories">
-    <div class="section-heading">
-      <h2>Product Categories</h2>
-      <p>Find the right security products for your requirements.</p>
-    </div>
-
-    <div class="category-grid">
-      <button class="category-card" type="button" data-category="IP Cameras">
-        <img src="images/products/jaise%20camera-01.jpg.png" alt="IP Camera">
-        <h3>Network Cameras</h3>
-      </button>
-
-      <button class="category-card" type="button" data-category="DVR & NVR">
-        <img src="images/products/jaise%20camera-01.jpg.png" alt="NVR">
-        <h3>NVR & DVR</h3>
-      </button>
-
-      <button class="category-card" type="button" data-category="CCTV Cameras">
-        <img src="images/products/jaise%20camera-01.jpg.png" alt="Analog CCTV">
-        <h3>Analog HD Cameras</h3>
-      </button>
-
-      <button class="category-card" type="button" data-category="Wireless Cameras">
-        <img src="images/products/jaise%20camera-01.jpg.png" alt="Wireless Camera">
-        <h3>Wireless Cameras</h3>
-      </button>
-
-      <button class="category-card" type="button" data-category="PTZ Cameras">
-        <img src="images/products/jaise%20camera-01.jpg.png" alt="PTZ Camera">
-        <h3>Speed Dome / PTZ</h3>
-      </button>
-
-      <button class="category-card" type="button" data-category="Video Door Phone">
-        <img src="images/products/jaise%20camera-01.jpg.png" alt="Video Door Phone">
-        <h3>Video Door Phones</h3>
-      </button>
-
-      <button class="category-card" type="button" data-category="Biometric Systems">
-        <img src="images/products/jaise%20camera-01.jpg.png" alt="Biometric">
-        <h3>Time & Attendance</h3>
-      </button>
-
-      <button class="category-card" type="button" data-category="Networking">
-        <img src="images/products/jaise%20camera-01.jpg.png" alt="Networking">
-        <h3>Networking & Switches</h3>
-      </button>
-
-      <button class="category-card" type="button" data-category="Storage">
-        <img src="images/products/jaise%20camera-01.jpg.png" alt="Storage">
-        <h3>Storage & Memory</h3>
-      </button>
-
-      <button class="category-card" type="button" data-category="Accessories">
-        <img src="images/products/jaise%20camera-01.jpg.png" alt="Accessories">
-        <h3>Accessories</h3>
-      </button>
-    </div>
-  </section>
-
-  <!-- PRODUCTS -->
-  <section id="products">
-    <div class="section-heading">
-      <h2>Our Products</h2>
-      <p>Explore our CCTV and security product collection.</p>
-    </div>
-
-    <div class="product-toolbar">
-      <input type="search" id="searchInput"
-        placeholder="Search products, model or category..."
-        aria-label="Search products">
-
-      <select id="categoryFilter" aria-label="Filter by product category">
-        <option value="">All Categories</option>
-        <option value="CCTV Cameras">CCTV Cameras</option>
-        <option value="Wireless Cameras">Wireless Cameras</option>
-        <option value="DVR & NVR">DVR & NVR</option>
-        <option value="IP Cameras">IP Cameras</option>
-        <option value="PTZ Cameras">PTZ Cameras</option>
-        <option value="Video Door Phone">Video Door Phone</option>
-        <option value="Biometric Systems">Biometric Systems</option>
-        <option value="Networking">Networking</option>
-        <option value="Storage">Storage</option>
-        <option value="Accessories">Accessories</option>
-      </select>
-    </div>
-
-    <div id="productGrid">
-      <p>Loading products...</p>
-    </div>
-  </section>
-
-  <!-- SOLUTIONS -->
-  <section id="solutions">
-    <div class="section-heading">
-      <h2>Solutions For Every Industry</h2>
-      <p>Security solutions designed for different environments and business requirements.</p>
-    </div>
-
-    <div class="solutions-grid">
-      <a href="#" class="solution-card open-contact"><h3>Banking</h3></a>
-      <a href="#" class="solution-card open-contact"><h3>Campus</h3></a>
-      <a href="#" class="solution-card open-contact"><h3>Hospitality & Healthcare</h3></a>
-      <a href="#" class="solution-card open-contact"><h3>Industrial</h3></a>
-      <a href="#" class="solution-card open-contact"><h3>Law Enforcement</h3></a>
-      <a href="#" class="solution-card open-contact"><h3>Real Estate</h3></a>
-      <a href="#" class="solution-card open-contact"><h3>Retail</h3></a>
-      <a href="#" class="solution-card open-contact"><h3>Safe City</h3></a>
-      <a href="#" class="solution-card open-contact"><h3>Smart Traffic</h3></a>
-      <a href="#" class="solution-card open-contact"><h3>Transport</h3></a>
-    </div>
-  </section>
-
-  <!-- MARKETING CONTENT -->
-  
-
-  <section id="brochures">
-    <div class="section-heading">
-      <h2>Product Brochures</h2>
-      <p>View and download product brochures and documents.</p>
-    </div>
-    <div id="brochuresGrid" class="marketing-grid">
-      <p>Loading brochures...</p>
-    </div>
-  </section>
-
-  <section id="videos">
-    <div class="section-heading">
-      <h2>Videos</h2>
-      <p>Watch product demonstrations and security solution videos.</p>
-    </div>
-    <div id="videosGrid" class="marketing-grid">
-      <p>Loading videos...</p>
-    </div>
-  </section>
-
-  <section id="gallery">
-    <div class="section-heading">
-      <h2>Gallery</h2>
-      <p>Explore photos of products, installations and company activities.</p>
-    </div>
-    <div id="galleryGrid" class="marketing-grid">
-      <p>Loading gallery...</p>
-    </div>
-  </section>
-
-  <section id="printPress">
-    <div class="section-heading">
-      <h2>Print & Press</h2>
-      <p>Company publications, press releases and media resources.</p>
-    </div>
-    <div id="printPressGrid" class="marketing-grid">
-      <p>Loading Print & Press content...</p>
-    </div>
-  </section>
-
-  <!-- MARKETING MEDIA VIEWER -->
-  <div id="marketingViewer" class="marketing-viewer"
-    role="dialog" aria-modal="true" aria-label="Media viewer">
-    <div class="marketing-viewer-box">
-      <button type="button" id="closeMarketingViewer"
-        aria-label="Close">×</button>
-      <div id="marketingViewerContent"></div>
-    </div>
-  </div>
-
-  <!-- SUPPORT -->
-  <section id="support">
-    <div class="section-heading">
-      <h2>Customer Support</h2>
-      <p>We are here to help you with product and service enquiries.</p>
-    </div>
-
-    <div class="support-grid">
-      <div class="support-card">
-        <h3>Technical Support</h3>
-        <p>Get assistance with CCTV and security products.</p>
-      </div>
-
-      <div class="support-card">
-        <h3>Warranty Support</h3>
-        <p>Contact us for warranty-related enquiries.</p>
-      </div>
-
-      <div class="support-card">
-        <h3>Downloads</h3>
-        <p>Ask us for product manuals and documentation.</p>
-      </div>
-
-      <div class="support-card">
-        <h3>Product Assistance</h3>
-        <p>Get help choosing the right security solution.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PARTNER CONNECT -->
-  <section id="partner">
-    <div class="section-heading">
-      <h2>Partner Connect</h2>
-      <p>
-        Interested in working with RB Tech Solution?
-        Contact us to discuss business and partnership opportunities.
-      </p>
-      <a href="inquiry.html">Become a Partner</a>
-    </div>
-  </section>
-
-  <!-- CAREERS -->
-  <section id="careers">
-    <div class="section-heading">
-      <h2>Working With Us</h2>
-      <p>Interested in working with our team? Contact us to discuss available opportunities.</p>
-      <a href="inquiry.html">Contact Us</a>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="newsletter-section">
-    <h2>Need a Security Solution?</h2>
-    <p>Contact RB Tech Solution for CCTV cameras and complete security solutions.</p>
-    <a href="inquiry.html">Send Inquiry Today</a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-grid">
-
-      <div>
-        <h3>RB TECH SOLUTION</h3>
         <p>
-          CCTV & Security Systems. Providing security products
-          and surveillance solutions for homes, offices and businesses.
+            Welcome to RB Tech Solution.
+            We provide professional website,
+            software and IT services for your business.
         </p>
-        <p style="margin-top:12px;">
-          Phone / WhatsApp:
-          <a href="https://wa.me/919663116089" target="_blank" rel="noopener">
-            +91 96631 16089
-          </a>
-        </p>
-        <p>Email: <a href="mailto:ajayhasda623@gmail.com">ajayhasda623@gmail.com</a></p>
-        <p>Address: Mangalore, Karnataka, India</p>
-      </div>
 
-      <div>
-        <h3>Products</h3>
-        <a href="#products">CCTV Cameras</a>
-        <a href="#products">IP Cameras</a>
-        <a href="#products">DVR & NVR</a>
-        <a href="#products">Wireless Cameras</a>
-        <a href="#products">Video Door Phones</a>
-        <a href="#products">Accessories</a>
-      </div>
+        <div class="hero-buttons">
 
-      <div>
-        <h3>Solutions</h3>
-        <a href="#solutions">Banking</a>
-        <a href="#solutions">Campus</a>
-        <a href="#solutions">Healthcare</a>
-        <a href="#solutions">Industrial</a>
-        <a href="#solutions">Retail</a>
-        <a href="#solutions">Safe City</a>
-      </div>
-
-      <div>
-        <h3>Quick Links</h3>
-        <a href="#about">About Us</a>
-        <a href="#marketing">Marketing</a>
-        <a href="#support">Support</a>
-        <a href="inquiry.html">Inquiry</a>
-        <a href="#partner">Partner Connect</a>
-        <a href="#" class="open-contact">Contact Us</a>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <p>© <span id="footerYear">2026</span> RB Tech Solution. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <!-- WHATSAPP FLOATING BUTTON -->
-  <a class="whatsapp-float"
-    href="https://wa.me/919663116089"
-    target="_blank" rel="noopener"
-    aria-label="Contact RB Tech Solution on WhatsApp">☎</a>
-
-  <!-- PRODUCT DETAILS MODAL -->
-  <div id="productModal" role="dialog" aria-modal="true" aria-label="Product details">
-    <div id="modalContent">
-      <button id="modalClose" type="button" aria-label="Close product details">×</button>
-    </div>
-  </div>
-
-  <!-- CONTACT POPUP -->
-  <div id="contactPopup" class="contact-popup"
-    role="dialog" aria-modal="true" aria-labelledby="contactPopupTitle">
-
-    <div class="contact-popup-box">
-
-      <button type="button" id="closeContactPopup"
-        class="contact-close" aria-label="Close Contact Popup">×</button>
-
-      <div class="contact-popup-header">
-        <h2 id="contactPopupTitle">Have queries, doubts or suggestions?</h2>
-        <p>We would love to hear from you. Please contact us.</p>
-      </div>
-
-      <div class="contact-popup-layout">
-
-        <div class="contact-details-box">
-          <h3>Contact Details</h3>
-
-          <div class="contact-detail-item">
-            <strong>Company</strong>
-            RB Tech Solution
-          </div>
-
-          <div class="contact-detail-item">
-            <strong>Contact Person</strong>
-            Ajay Hasda
-          </div>
-
-          <div class="contact-detail-item">
-            <strong>Phone / WhatsApp</strong>
-            <a href="https://wa.me/919663116089"
-              target="_blank" rel="noopener">
-              +91 96631 16089
+            <a href="services.html" class="service-btn">
+                Our Services
             </a>
-          </div>
 
-          <div class="contact-detail-item">
-            <strong>E-mail</strong>
-            <a href="mailto:ajayhasda623@gmail.com">
-              ajayhasda623@gmail.com
+            <a href="#contact" class="contact-btn">
+                Contact Us
             </a>
-          </div>
 
-          <div class="contact-detail-item">
-            <strong>Address</strong>
-            Mangalore, Karnataka, India
-          </div>
-
-          <div class="contact-detail-item">
-            <strong>Business Hours</strong>
-            Please contact us by phone or WhatsApp for assistance.
-          </div>
         </div>
 
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- CONTACT POPUP JAVASCRIPT -->
-  <script>
-    (function () {
-      const popup = document.getElementById("contactPopup");
-      const closeButton = document.getElementById("closeContactPopup");
+    <!-- OUR SERVICES -->
 
-      if (!popup || !closeButton) return;
+    <section class="services" id="services">
 
-      let previousFocus = null;
+        <h2>Our Services</h2>
 
-      function openPopup(event) {
-        if (event) event.preventDefault();
+        <div class="service-list">
 
-        previousFocus = document.activeElement;
+            <a href="website-development.html" class="service-card-link">
+                <div class="icon">🌐</div>
+                <h3>Website Development</h3>
+                <p>Professional Website Design</p>
+            </a>
 
-        popup.classList.add("active");
-        document.body.style.overflow = "hidden";
+            <a href="software-development.html" class="service-card-link">
+                <div class="icon">💻</div>
+                <h3>Software Development</h3>
+                <p>Custom Software Solutions</p>
+            </a>
 
-        closeButton.focus();
-      }
+            <a href="billing-software.html" class="service-card-link">
+                <div class="icon">🧾</div>
+                <h3>Billing Software</h3>
+                <p>Smart Billing and POS System</p>
+            </a>
 
-      function closePopup() {
-        popup.classList.remove("active");
-        document.body.style.overflow = "";
+            <a href="mobile-computer-repair.html" class="service-card-link">
+                <div class="icon">🔧</div>
+                <h3>Mobile & Computer Repair</h3>
+                <p>Technical Support and Repair</p>
+            </a>
 
-        if (previousFocus && typeof previousFocus.focus === "function") {
-          previousFocus.focus();
-        }
-      }
+            <a href="cctv-installation.html" class="service-card-link">
+                <div class="icon">📹</div>
+                <h3>CCTV Installation</h3>
+                <p>Security Camera Solutions</p>
+            </a>
 
-      document.querySelectorAll(".open-contact").forEach(link => {
-        link.addEventListener("click", openPopup);
-      });
+        </div>
 
-      closeButton.addEventListener("click", closePopup);
+        <a href="https://wa.me/919663116089"
+           class="contact"
+           target="_blank"
+           rel="noopener">
+            Contact on WhatsApp
+        </a>
 
-      popup.addEventListener("click", function (event) {
-        if (event.target === popup) {
-          closePopup();
-        }
-      });
+    </section>
 
-      document.addEventListener("keydown", function (event) {
-        if (
-          event.key === "Escape" &&
-          popup.classList.contains("active")
-        ) {
-          closePopup();
-        }
-      });
-    })();
-  </script>
+    <!-- ABOUT US -->
 
-  <!-- MOBILE MENU -->
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
+    <section id="about">
 
-    menuToggle?.addEventListener("click", function () {
-      const isOpen = mainNav.classList.toggle("active");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.textContent = isOpen ? "✕" : "☰";
-    });
+        <h2>About Us</h2>
 
-    document.querySelectorAll(".dropdown-toggle").forEach(link => {
-      link.addEventListener("click", function (event) {
-        if (window.innerWidth <= 768) {
-          event.preventDefault();
+        <p>
+           RB Tech Solution (RBH) is a technology service company.
+            We provide website development, custom software,
+            billing solutions, mobile and computer repair,
+            and CCTV installation services.
+        </p>
 
-          const parent = this.closest(".nav-dropdown");
-          const menu = parent.querySelector(".mega-menu, .dropdown-menu");
+    </section>
 
-          if (!menu) return;
+    <!-- HOME PAGE CONTACT FORM -->
 
-          const isOpen = menu.style.display === "block";
+    <section class="contact-section" id="contact">
 
-          document.querySelectorAll(
-            "#mainNav .mega-menu, #mainNav .dropdown-menu"
-          ).forEach(item => {
-            item.style.display = "none";
-          });
+        <h2>Contact Us</h2>
 
-          menu.style.display = isOpen ? "none" : "block";
-        }
-      });
-    });
+        <p>
+            Need any technical help?
+            Send us your enquiry.
+        </p>
 
-    document.querySelectorAll("#mainNav a").forEach(link => {
-      link.addEventListener("click", () => {
-        if (
-          window.innerWidth <= 768 &&
-          !link.classList.contains("dropdown-toggle")
-        ) {
-          mainNav.classList.remove("active");
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.textContent = "☰";
-        }
-      });
-    });
+        <form id="homeContactForm">
 
-    const footerYear = document.getElementById("footerYear");
+            <label for="homeName">Full Name *</label>
+            <input type="text"
+                   id="homeName"
+                   placeholder="Enter your name"
+                   required>
 
-    if (footerYear) {
-      footerYear.textContent = new Date().getFullYear();
-    }
-  </script>
+            <label for="homeMobile">Mobile Number *</label>
+            <input type="tel"
+                   id="homeMobile"
+                   placeholder="Enter 10 digit mobile number"
+                   pattern="[0-9]{10}"
+                   maxlength="10"
+                   inputmode="numeric"
+                   required>
 
-  <!-- CALCULATE AVAILABLE HERO SCREEN HEIGHT -->
-  <script>
-    (function () {
-      const hero = document.querySelector(".hero-section");
-      const topStrip = document.querySelector(".top-strip");
-      const header = document.querySelector(".site-header");
+            <label for="homeEmail">Email Address</label>
+            <input type="email"
+                   id="homeEmail"
+                   placeholder="Enter your email">
 
-      if (!hero) return;
+            <label for="homeService">Select Service *</label>
 
-      function updateHeroHeight() {
-        const stripHeight = topStrip
-          ? topStrip.getBoundingClientRect().height
-          : 0;
+            <select id="homeService" required>
+                <option value="">-- Select a Service --</option>
+                <option>Website Development</option>
+                <option>Software Development</option>
+                <option>Billing Software</option>
+                <option>Mobile & Computer Repair</option>
+                <option>CCTV Installation</option>
+                <option>Other Technical Support</option>
+            </select>
 
-        const headerHeight = header
-          ? header.getBoundingClientRect().height
-          : 0;
+            <label for="homeMessage">Your Message *</label>
 
-        const availableHeight = Math.max(
-          300,
-          window.innerHeight - stripHeight - headerHeight
-        );
+            <textarea id="homeMessage"
+                      placeholder="Describe your requirement..."
+                      required></textarea>
 
-        hero.style.setProperty(
-          "--site-header-height",
-          (window.innerHeight - availableHeight) + "px"
-        );
+            <button type="submit" id="submitBtn">
+                Submit
+            </button>
 
-        hero.style.height = availableHeight + "px";
-      }
+        </form>
 
-      updateHeroHeight();
+    </section>
 
-      window.addEventListener("resize", updateHeroHeight);
+    <!-- FOOTER -->
 
-      window.addEventListener("orientationchange", function () {
-        setTimeout(updateHeroHeight, 150);
-      });
-    })();
-  </script>
+    <footer>
 
-  <!-- EXISTING APP JAVASCRIPT -->
-  <script type="module" src="app.js"></script>
+       <p>© 2026 RB Tech Solution (RBH)</p>
+        <p>Your Technology Partner</p>
+        <p>Innovate • Develop • Grow</p>
 
-  <!-- PUBLIC MARKETING JAVASCRIPT -->
-  <script type="module" src="marketing.js"></script>
+        <p>
+            Phone:
+            <a href="tel:+919663116089">+91 9663116089</a>
+        </p>
 
-<style>
-/* Both header sections transparent */
-.top-strip,
-.site-header,
-.header-inner {
-  background: transparent !important;
-  box-shadow: none !important;
-}
+        <p>
+            Email:
+            <a href="mailto:ajayhasda623@gmail.com">
+                ajayhasda623@gmail.com
+            </a>
+        </p>
 
-/* Keep header content above hero media */
-.top-strip,
-.site-header {
-  position: relative !important;
-  z-index: 1000 !important;
-}
+    </footer>
 
+    <!-- EMAILJS AND WHATSAPP -->
 
-/* HERO SLIDER - FULL WIDTH, REDUCED HEIGHT */
-.hero-section {
-  margin-top: calc(-1 * var(--site-header-height, 0px)) !important;
-  width: 100% !important;
-  height: 65vh !important;
-  height: 65svh !important;
-  min-height: 300px !important;
-  position: relative !important;
-  z-index: 0 !important;
-}
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-</style>
+    <script>
 
-<style>
-/* MAIN NAVIGATION - WHITE */
-.site-header #mainNav > a,
-.site-header #mainNav > .nav-dropdown > .dropdown-toggle {
-color: #ffffff !important;
--webkit-text-fill-color: #ffffff !important;
-font-weight: 700 !important;
-text-shadow: 1px 2px 5px #000000 !important;
-}
+        emailjs.init({
+            publicKey: "AsUiMVkBY3DFQ-DOJ"
+        });
 
-/* ALL DROPDOWN CONTENT - BLACK */
-.site-header #mainNav .mega-menu,
-.site-header #mainNav .mega-menu *,
-.site-header #mainNav .dropdown-menu,
-.site-header #mainNav .dropdown-menu * {
-color: #000000 !important;
--webkit-text-fill-color: #000000 !important;
-text-shadow: none !important;
-}
+        document.getElementById("homeContactForm")
+        .addEventListener("submit", async function(event) {
 
-/* DROPDOWN HOVER - GREEN */
-.site-header #mainNav .mega-menu a:hover,
-.site-header #mainNav .dropdown-menu a:hover {
-color: #08a045 !important;
--webkit-text-fill-color: #08a045 !important;
-}
-/* HEADER CONTENT MOVE UP */
-.site-header .header-inner {
-  transform: translateY(-12px);
-}
-</style>
+            event.preventDefault();
+
+            const btn = document.getElementById("submitBtn");
+
+            const name = document.getElementById("homeName").value.trim();
+            const mobile = document.getElementById("homeMobile").value.trim();
+            const email = document.getElementById("homeEmail").value.trim();
+            const service = document.getElementById("homeService").value;
+            const message = document.getElementById("homeMessage").value.trim();
+
+            if (!/^[0-9]{10}$/.test(mobile)) {
+                alert("Please enter a valid 10 digit mobile number.");
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = "Sending...";
+
+            const whatsappMessage =
+                "New Enquiry - RB Tech Solution\n\n" +
+                "Name: " + name + "\n" +
+                "Mobile: " + mobile + "\n" +
+                "Email: " + (email || "Not provided") + "\n" +
+                "Service: " + service + "\n" +
+                "Message: " + message;
+
+            const whatsappURL =
+                "https://wa.me/919663116089?text=" +
+                encodeURIComponent(whatsappMessage);
+
+            const waWindow = window.open("about:blank", "_blank");
+
+            try {
+
+                await emailjs.send(
+                    "service_ipztz05",
+                    "template_c4lyz4p",
+                    {
+                        name: name,
+                        mobile: mobile,
+                        email: email || "Not provided",
+                        service: service,
+                        message: message
+                    }
+                );
+
+                alert("Email sent successfully!");
+
+                if (waWindow) {
+                    waWindow.location.href = whatsappURL;
+                } else {
+                    alert("Please allow pop-ups to open WhatsApp.");
+                }
+
+                document.getElementById("homeContactForm").reset();
+
+            } catch (error) {
+
+                console.error("EmailJS Error:", error);
+
+                alert("Email could not be sent. Please check your internet connection.");
+
+                if (waWindow) {
+                    waWindow.location.href = whatsappURL;
+                }
+
+            }
+
+            btn.disabled = false;
+            btn.textContent = "Submit";
+
+        });
+
+    </script>
+
 </body>
 </html>
