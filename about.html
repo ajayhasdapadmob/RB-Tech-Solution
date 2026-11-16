@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us - RB Tech Solution (RBH)</title>
+
+  <meta name="description" content="Learn about RB Tech Solution (RBH), your technology partner for website development, custom software, billing solutions, computer repair and CCTV installation.">
+
+  <meta name="keywords" content="About RB Tech Solution, RBH, Website Development, Software Development, Billing Software, CCTV Installation">
+
+  <meta name="author" content="RB Tech Solution">
+
+  <meta name="theme-color" content="#0f172a">
+
+  <link rel="canonical" href="https://ajayhasdapadmob.github.io/RB-Tech-Solution/about.html">
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 15px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .logo h2 {
+      font-size: 21px;
+      color: white;
+    }
+
+    .logo span {
+      color: #38bdf8;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #38bdf8;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a, #1e40af);
+      color: white;
+      text-align: center;
+      padding: 85px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      color: #dbeafe;
+      font-size: 17px;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 65px 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 30px;
+      color: #0f172a;
+      margin-bottom: 25px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+      font-size: 16px;
+      color: #475569;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px 22px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+    }
+
+    .card h3 {
+      color: #1d4ed8;
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .services {
+      background: #eff6ff;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .service-item {
+      background: white;
+      padding: 18px;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #1e40af;
+      border: 1px solid #dbeafe;
+    }
+
+    .cta {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .cta h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 13px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .btn:hover {
+      background: #7dd3fc;
+    }
+
+    footer {
+      background: #020617;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 60px 18px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .section {
+        padding: 45px 18px;
+      }
+
+      .section h2 {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="images/logo.png" alt="RB Tech Solution Logo">
+    <h2>RB Tech <span>Solution</span></h2>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>About RB Tech Solution</h1>
+  <p>
+    Your Technology Partner – Innovate, Develop and Grow.
+    We provide practical technology solutions to help individuals
+    and businesses move forward in the digital world.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Who We Are</h2>
+
+  <div class="intro">
+    <p>
+      <strong>RB Tech Solution (RBH)</strong> is a technology service
+      brand focused on website development, custom software,
+      billing solutions, mobile and computer repair, and CCTV installation.
+    </p>
+
+    <p style="margin-top:15px;">
+      Our goal is to make technology easier, more useful and
+      accessible for individuals, shops and businesses.
+      We focus on practical solutions, reliable support and
+      customer satisfaction.
+    </p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>
+        To provide useful, affordable and reliable technology
+        solutions that help customers solve everyday digital problems.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>
+        To become a trusted technology partner for individuals
+        and businesses through innovation and continuous improvement.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Our Commitment</h3>
+      <p>
+        To understand customer needs and deliver practical
+        solutions with honest communication and support.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section services">
+  <h2>What We Do</h2>
+
+  <p class="intro">
+    We offer a range of technology services to support
+    your personal and business needs.
+  </p>
+
+  <div class="service-list">
+    <div class="service-item">Website Development</div>
+    <div class="service-item">Custom Software Development</div>
+    <div class="service-item">Billing Software Solutions</div>
+    <div class="service-item">Mobile & Computer Repair</div>
+    <div class="service-item">CCTV Installation</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Why Choose RB Tech Solution?</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Practical Solutions</h3>
+      <p>Solutions designed around real customer and business needs.</p>
+    </div>
+
+    <div class="card">
+      <h3>Affordable Approach</h3>
+      <p>Technology services with a focus on value and affordability.</p>
+    </div>
+
+    <div class="card">
+      <h3>Customer Support</h3>
+      <p>Clear communication and support throughout the service process.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Let's Build Something Great Together</h2>
+  <p>
+    Have a project or need technical assistance?
+    Get in touch with RB Tech Solution.
+  </p>
+
+  <a href="contact.html" class="btn">Contact Us</a>
+
+  <a href="https://wa.me/919663116089" class="btn"
+     target="_blank" rel="noopener">
+    WhatsApp Us
+  </a>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> RB Tech Solution (RBH). All Rights Reserved.</p>
+  <p>Your Technology Partner | Innovate • Develop • Grow</p>
+  <p>
+    Email:
+    <a href="mailto:ajayhasda623@gmail.com">
+      ajayhasda623@gmail.com
+    </a>
+  </p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
